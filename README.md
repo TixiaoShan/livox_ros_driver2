@@ -1,4 +1,8 @@
+Livox device driver under ROS2, support Lidar HAP and Mid-360.
+
 # Build Guide
+
+## Install Livox-SDK2
 ```bash
 cd ~/Downloads
 git clone https://github.com/Livox-SDK/Livox-SDK2.git
@@ -8,6 +12,17 @@ cd build
 cmake .. -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 make -j
 sudo make install
+```
+
+## Delete Livox-SDK2
+```bash
+sudo rm -rf /usr/local/lib/liblivox_lidar_sdk_*
+sudo rm -rf /usr/local/include/livox_lidar_*
+```
+
+## Build Package
+```bash
+colcon build --symlink-install
 ```
 
 # Livox ROS Driver 2
